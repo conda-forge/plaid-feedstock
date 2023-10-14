@@ -13,13 +13,14 @@ build:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python >=3.11
     - setuptools
     - setuptools-scm
+    - pip
 
   run:
     - python >=3.11

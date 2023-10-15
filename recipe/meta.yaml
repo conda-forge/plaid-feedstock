@@ -24,13 +24,13 @@ requirements:
 
   run:
     - python >=3.11
-    - tqdm 
+    - tqdm
     - pyyaml
     - pycgns
     - numpy
     - basictools >=1.9.9
     - pyvista
-    - h5py 
+    - h5py
 
 test:
   imports:

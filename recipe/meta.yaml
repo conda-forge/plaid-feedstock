@@ -13,7 +13,7 @@ build:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -30,7 +30,7 @@ requirements:
     - numpy
     - basictools >=1.9.9
     - pyvista
-    - h5py
+    - pytest
 
 test:
   imports:

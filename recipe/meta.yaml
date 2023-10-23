@@ -35,6 +35,8 @@ requirements:
 test:
   imports:
     - plaid
+  commands:
+    - python -m pytest tests
 
 about:
   home: https://gitlab.com/drti/plaid

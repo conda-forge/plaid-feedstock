@@ -1,5 +1,4 @@
-{% set version = "0.0.3" %}
-{% set number = "2" %}
+{% set version = "0.0.5" %}
 
 package:
   name: plaid
@@ -7,14 +6,15 @@ package:
 
 source:
   url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: 861e26df5c348b0d0c7970bc0180b09991235ef4310612c6805ae4597a6734d3
+  sha256: b805548b67b25db2796c4daef740d3874f520e4860eee3c9b2814d8d7a77c26c
+
 
 build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
-  number: {{ number }}
+  number: 0
 
 requirements:
   host:
@@ -35,8 +35,13 @@ requirements:
 test:
   imports:
     - plaid
+  source_files:
+    - tests
+    - examples
   commands:
-    - python -m pytest $SRC_DIR/../work_moved_plaid-{{ version }}-py_{{ number }}_noarch/tests
+    - python -m pytest tests
+    - cd examples
+    - bash run_examples.sh
 
 about:
   home: https://gitlab.com/drti/plaid

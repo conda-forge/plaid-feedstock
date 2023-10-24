@@ -30,9 +30,10 @@ requirements:
     - pycgns
     - numpy
     - basictools >=1.9.9
-    - pytest
 
 test:
+  requires:
+    - pytest
   imports:
     - plaid
   source_files:

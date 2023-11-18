@@ -1,4 +1,4 @@
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: b805548b67b25db2796c4daef740d3874f520e4860eee3c9b2814d8d7a77c26c
+  sha256: cceb7e1d210d7b1b9ef3cd2efaf11c279f7eab938a2c2ff442366f5d8e3900e1
 
 
 build:
@@ -14,7 +14,7 @@ build:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -29,7 +29,7 @@ requirements:
     - pyyaml
     - pycgns
     - numpy
-    - basictools >=1.9.9
+    - muscat >=2.0.0
 
 test:
   requires:

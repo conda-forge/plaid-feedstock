@@ -14,7 +14,7 @@ build:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -30,6 +30,7 @@ requirements:
     - pycgns
     - numpy
     - muscat >=2.0.0
+    - scikit-learn
 
 test:
   requires:

@@ -1,4 +1,4 @@
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: 5ff9e597cec54f0c9eba5491710837df01a6f06cdb45a25bcdc213708e650d5f
+  sha256: 57b1d3807bdcc9643b5ef11a26479dd012a1febfb451eeba1033cf6f8ec4a8d4
 
 
 build:
@@ -29,13 +29,13 @@ requirements:
     - pyyaml
     - pycgns
     - numpy
-    - muscat >=2.0.0
+    - matplotlib
     - scikit-learn
 
 test:
   requires:
     - pytest
-    - scikit-learn
+    - muscat >=2.0.0
   imports:
     - plaid
   source_files:

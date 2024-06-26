@@ -1,4 +1,4 @@
-{% set version = "0.0.9" %}
+{% set version = "0.0.10" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: 57b1d3807bdcc9643b5ef11a26479dd012a1febfb451eeba1033cf6f8ec4a8d4
+  sha256: 7a95cc492ad3e65f93768430fe55d60294d3d42f288d0a01866fa1a1fee8fef7
 
 
 build:
@@ -31,6 +31,8 @@ requirements:
     - numpy
     - matplotlib
     - scikit-learn
+    - pydantic
+    - datasets
 
 test:
   requires:

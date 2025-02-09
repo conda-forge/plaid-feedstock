@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: 269360c1b1ce7950a9eb0896544d1fd86ed56f91270f2a17a2772d083101255d
+  sha256: 3060fea45e47328fa68744933456841076391c5f976c5bcb739eb225e3ff63f5
 
 
 build:

@@ -1,4 +1,4 @@
-{% set version = "0.0.10" %}
+{% set version = "0.1" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: 7a95cc492ad3e65f93768430fe55d60294d3d42f288d0a01866fa1a1fee8fef7
+  sha256: 269360c1b1ce7950a9eb0896544d1fd86ed56f91270f2a17a2772d083101255d
 
 
 build:

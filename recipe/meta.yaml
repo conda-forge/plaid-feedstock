@@ -31,12 +31,12 @@ requirements:
     - matplotlib-base
     - scikit-learn
     - pydantic
-    - datasets>=3.0
+    - datasets >=3.0
 
 test:
   requires:
     - pytest
-    - muscat==2.4.1
+    - muscat ==2.4.1
   imports:
     - plaid
   source_files:

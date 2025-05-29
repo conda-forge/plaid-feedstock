@@ -27,9 +27,9 @@ requirements:
     - python >=3.11
     - tqdm
     - pyyaml
-    - pycgns
+    - pycgns-core
     - numpy
-    - matplotlib
+    - matplotlib-base
     - scikit-learn
     - pydantic
     - datasets

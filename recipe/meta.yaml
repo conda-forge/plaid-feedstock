@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 53e155d28d78e1efbd6f5468e6a638a7e713f47f910d2aa41d79e02c17d56fda
+  sha256: 9ce638e0399128b2a7c6823a57585a9b3d9c34a11d3a30375ffb1d2f0c2eefe2
 
 build:
   script_env:
@@ -46,7 +46,7 @@ test:
     - python -m pytest tests
     - cd examples
     - bash run_examples.sh  # [unix]
-    - .\run_examples.ps1  # [win]
+    - run_examples.bat      # [win]
 
 about:
   home: https://github.com/PLAID-lib/plaid

@@ -17,13 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.11
     - setuptools
     - setuptools-scm
     - pip
 
   run:
-    - python >=3.11
     - tqdm
     - pyyaml
     - pycgns-core

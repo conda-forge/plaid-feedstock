@@ -9,4 +9,4 @@ provider:
   win_64: azure
   osx_64: azure
 
-test_on_native_only: true  # optional optimization
+test: native_and_emulated

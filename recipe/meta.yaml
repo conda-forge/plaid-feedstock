@@ -1,35 +1,34 @@
-{% set version = "0.1" %}
+{% set version = "0.1.1" %}
 
 package:
   name: plaid
   version: {{ version }}
 
 source:
-  url: https://gitlab.com/drti/plaid/-/archive/{{ version }}/plaid-{{ version }}.tar.gz
-  sha256: 62219909aff94e888fe997a284ee9efb2edf48a0a4b3949d0f3acdf276cf30a9
-
+  url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 9ce638e0399128b2a7c6823a57585a9b3d9c34a11d3a30375ffb1d2f0c2eefe2
 
 build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
-  noarch: python
-  number: 1
+  skip: true  # [py<311 or py>312]
+  number: 0
 
 requirements:
   host:
-    - python >=3.11
+    - python
     - setuptools
     - setuptools-scm
     - pip
 
   run:
-    - python >=3.11
+    - python
     - tqdm
     - pyyaml
-    - pycgns
+    - pycgns-core
     - numpy
-    - matplotlib
+    - matplotlib-base
     - scikit-learn
     - pydantic
     - datasets
@@ -37,7 +36,7 @@ requirements:
 test:
   requires:
     - pytest
-    - muscat >=2.0.0
+    - muscat ==2.4.1
   imports:
     - plaid
   source_files:
@@ -46,10 +45,11 @@ test:
   commands:
     - python -m pytest tests
     - cd examples
-    - bash run_examples.sh
+    - bash run_examples.sh  # [unix]
+    - run_examples.bat      # [win]
 
 about:
-  home: https://gitlab.com/drti/plaid
+  home: https://github.com/PLAID-lib/plaid
   summary: 'Physics Learning AI Datamodel (PLAID)'
   description: |
     A package that implements a data model tailored for AI and ML in the context of physics problems
@@ -58,7 +58,7 @@ about:
   license_family: BSD
   license_file: LICENSE.txt
   doc_url: https://plaid-lib.readthedocs.io
-  dev_url: https://gitlab.com/drti/plaid
+  dev_url: https://github.com/PLAID-lib/plaid
 
 extra:
   recipe-maintainers:

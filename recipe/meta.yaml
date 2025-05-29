@@ -44,8 +44,9 @@ test:
     - examples
   commands:
     - python -m pytest tests
-    - cd examples && bash run_examples.sh  # [unix]
-    # - cd examples ; run_examples.ps1  # [win]
+    - cd examples
+    - bash run_examples.sh  # [unix]
+    # - run_examples.ps1  # [win]
 
 about:
   home: https://github.com/PLAID-lib/plaid

@@ -1,6 +1,11 @@
 github:
   branch_name: main
   tooling_branch_name: main
+
 conda_build:
   error_overlinking: true
+  python:
+    - 3.11
+    - 3.12
+
 conda_forge_output_validation: true

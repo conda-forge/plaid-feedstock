@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: plaid
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 9ce638e0399128b2a7c6823a57585a9b3d9c34a11d3a30375ffb1d2f0c2eefe2
+  sha256: 59325da2f05d1a290b6ba749ab4519b68739c6d9cdc19322e823ddee525291dc
 
 build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<311 or py>312]
-  number: 1
+  number: 0
 
 requirements:
   host:

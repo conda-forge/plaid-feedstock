@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 59325da2f05d1a290b6ba749ab4519b68739c6d9cdc19322e823ddee525291dc
+  sha256: c20be1854a73bc2706b779025b9030eab05830902e5ace4e2e47355d0fb4e3d3
 
 build:
   script_env:

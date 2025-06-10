@@ -57,6 +57,7 @@ outputs:
   - name: plaid-devenv
     build:
       skip: true  # [py<311 or py>312]
+      noarch: generic
       
     requirements:
       run:

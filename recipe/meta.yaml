@@ -97,11 +97,6 @@ about:
   dev_url: https://github.com/PLAID-lib/plaid
 
 extra:
-  keywords:
-    - machine-learning
-    - physics
-    - data-model
-    - datasets
   recipe-maintainers:
     - bstaber
     - casenave

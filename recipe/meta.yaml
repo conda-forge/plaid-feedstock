@@ -9,10 +9,12 @@ source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
   sha256: e7f03a9d1b18bae2b706411675d3a678c9ac4147250d89606ff19e2d5d03077f  
 
+build:
+  number: 1
+
 outputs:
   - name: plaid
     build:
-      number: 1
       skip: true  # [py<311 or py>312]
       script_env:
         - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
@@ -58,27 +60,27 @@ outputs:
       
     requirements:
       run:
-      - python >={{ python_min }}
-      - tqdm
-      - pyyaml
-      - pycgns-core
-      - scikit-learn
-      - datasets >=3.0
-      - numpy
-      - matplotlib-base
-      - pydantic
-      - muscat ==2.4.1
-      - pytest
-      - pytest-cov
-      - ruff
-      - pre-commit
-      - sphinx
-      - sphinx-autoapi
-      - sphinx-tabs
-      - sphinxcontrib-bibtex
-      - myst-nb
-      - myst-parser
-      - furo
+        - python >={{ python_min }}
+        - tqdm
+        - pyyaml
+        - pycgns-core
+        - scikit-learn
+        - datasets >=3.0
+        - numpy
+        - matplotlib-base
+        - pydantic
+        - muscat ==2.4.1
+        - pytest
+        - pytest-cov
+        - ruff
+        - pre-commit
+        - sphinx
+        - sphinx-autoapi
+        - sphinx-tabs
+        - sphinxcontrib-bibtex
+        - myst-nb
+        - myst-parser
+        - furo
   
     test:
       commands:

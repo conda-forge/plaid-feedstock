@@ -2,7 +2,7 @@
 {% set python_min = "3.11" %}
 
 package:
-  name: plaid
+  name: plaid-suite
   version: {{ version }}
 
 source:

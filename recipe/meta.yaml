@@ -78,7 +78,7 @@ outputs:
       - pydantic
 ##### DEV/TESTS/EXAMPLES #####
 #---# mesh/graph libs
-      - muscat=2.4.1
+      - muscat ==2.4.1
 #---# testing
       - pytest
       - pytest-cov

@@ -10,3 +10,7 @@ provider:
   osx_64: azure
 
 test: native_and_emulated
+
+outputs:
+  - name: plaid
+  - name: plaid-devenv

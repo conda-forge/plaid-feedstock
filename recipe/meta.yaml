@@ -7,15 +7,13 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: e88cef050fdf417592a647ab1a8c040c87fdcce8fa795bdd7e5610b5a2c21c79  
-
-build:
-  skip: true  # [py<311 or py>312]
-  number: 1
+  sha256: e7f03a9d1b18bae2b706411675d3a678c9ac4147250d89606ff19e2d5d03077f  
 
 outputs:
   - name: plaid
     build:
+      number: 1
+      skip: true  # [py<311 or py>312]
       script_env:
         - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
       script: python -m pip install . -vv  
@@ -55,6 +53,8 @@ outputs:
         - run_examples.bat      # [win]
 
   - name: plaid-devenv
+    build:
+      skip: true  # [py<311 or py>312]
       
     requirements:
       run:

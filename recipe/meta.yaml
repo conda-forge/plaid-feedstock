@@ -2,7 +2,7 @@
 {% set python_min = "3.11" %}
 
 package:
-  name: plaid-suite
+  name: plaid-split
   version: {{ version }}
 
 source:
@@ -99,6 +99,7 @@ about:
   dev_url: https://github.com/PLAID-lib/plaid
 
 extra:
+  feedstock-name: plaid
   recipe-maintainers:
     - bstaber
     - casenave

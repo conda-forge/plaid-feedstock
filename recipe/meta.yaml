@@ -15,11 +15,15 @@ build:
 outputs:
   - name: plaid
     build:
+      script_env:
+        - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
       script: {{ PYTHON }} -m pip install . -vv  
       
     requirements:
       host:
         - python >=3.11,<3.13
+        - setuptools
+        - setuptools-scm        
         - pip
     
       run:

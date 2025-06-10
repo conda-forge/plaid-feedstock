@@ -23,8 +23,8 @@ outputs:
     requirements:
       host:
         - python {{ python_min }}
-        - setuptools >=61
-        - setuptools-scm >=6.4  # or whatever version works      
+        - setuptools >=60
+        - setuptools-scm >=8.0      
         - pip
     
       run:

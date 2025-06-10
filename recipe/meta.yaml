@@ -9,26 +9,21 @@ source:
   sha256: e88cef050fdf417592a647ab1a8c040c87fdcce8fa795bdd7e5610b5a2c21c79  
 
 build:
-  number: 1
   skip: true  # [py<311 or py>312]
+  number: 1
 
 outputs:
   - name: plaid
-    version: {{ version }}
     build:
-      script_env:
-        - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-      script: {{ PYTHON }} -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv  
       
     requirements:
       host:
-        - python
-        - setuptools
-        - setuptools-scm
+        - python >=3.11,<3.13
         - pip
     
       run:
-        - python
+        - python >=3.11,<3.13
         - tqdm
         - pyyaml
         - pycgns-core
@@ -40,6 +35,7 @@ outputs:
     
     test:
       requires:
+        - bash  # [unix]
         - pytest
         - muscat ==2.4.1
       imports:
@@ -54,11 +50,12 @@ outputs:
         - run_examples.bat      # [win]
 
   - name: plaid-devenv
-    version: {{ version }}
-    
+    build:
+      noarch: python
+      
     requirements:
       run:
-      - python
+      - python >=3.11,<3.13
       - tqdm
       - pyyaml
       - pycgns-core
@@ -82,7 +79,7 @@ outputs:
   
     test:
       imports:
-        - numpy
+        - plaid-devenv
     
 about:
   home: https://github.com/PLAID-lib/plaid

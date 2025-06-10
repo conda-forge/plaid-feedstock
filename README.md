@@ -1,5 +1,5 @@
-About plaid-split-feedstock
-===========================
+About plaid-feedstock
+=====================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/plaid-feedstock/blob/main/LICENSE.txt)
 
@@ -21,6 +21,45 @@ Current build status
 
 
 <table>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -28,53 +67,54 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid--split-green.svg)](https://anaconda.org/conda-forge/plaid-split) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid-split.svg)](https://anaconda.org/conda-forge/plaid-split) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid-split.svg)](https://anaconda.org/conda-forge/plaid-split) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid-split.svg)](https://anaconda.org/conda-forge/plaid-split) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid-green.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid--devenv-green.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) |
 
-Installing plaid-split
-======================
+Installing plaid
+================
 
-Installing `plaid-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `plaid` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `plaid-split` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `plaid, plaid-devenv` can be installed with `conda`:
 
 ```
-conda install plaid-split
-```
-
-or with `mamba`:
-
-```
-mamba install plaid-split
-```
-
-It is possible to list all of the versions of `plaid-split` available on your platform with `conda`:
-
-```
-conda search plaid-split --channel conda-forge
+conda install plaid plaid-devenv
 ```
 
 or with `mamba`:
 
 ```
-mamba search plaid-split --channel conda-forge
+mamba install plaid plaid-devenv
+```
+
+It is possible to list all of the versions of `plaid` available on your platform with `conda`:
+
+```
+conda search plaid --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search plaid --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search plaid-split --channel conda-forge
+mamba repoquery search plaid --channel conda-forge
 
-# List packages depending on `plaid-split`:
-mamba repoquery whoneeds plaid-split --channel conda-forge
+# List packages depending on `plaid`:
+mamba repoquery whoneeds plaid --channel conda-forge
 
-# List dependencies of `plaid-split`:
-mamba repoquery depends plaid-split --channel conda-forge
+# List dependencies of `plaid`:
+mamba repoquery depends plaid --channel conda-forge
 ```
 
 
@@ -119,17 +159,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating plaid-split-feedstock
-==============================
+Updating plaid-feedstock
+========================
 
-If you would like to improve the plaid-split recipe or build a new
+If you would like to improve the plaid recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/plaid-split-feedstock are
+Note that all branches in the conda-forge/plaid-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.

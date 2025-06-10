@@ -1,7 +1,7 @@
 {% set version = "0.1.5" %}
 
 package:
-  name: plaid
+  name: plaid-split
   version: {{ version }}
 
 source:
@@ -9,45 +9,92 @@ source:
   sha256: e88cef050fdf417592a647ab1a8c040c87fdcce8fa795bdd7e5610b5a2c21c79  
 
 build:
-  script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<311 or py>312]
-  number: 0
+  number: 1
 
-requirements:
-  host:
-    - python
-    - setuptools
-    - setuptools-scm
-    - pip
+outputs:
+  - name: plaid
+    version: {{ version }}
+    build:
+      script_env:
+        - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+      script: {{ PYTHON }} -m pip install . -vv
+      skip: true  # [py<311 or py>312]
+      
+    requirements:
+      host:
+        - python
+        - setuptools
+        - setuptools-scm
+        - pip
+    
+      run:
+        - python
+        - tqdm
+        - pyyaml
+        - pycgns-core
+        - numpy
+        - matplotlib-base
+        - scikit-learn
+        - pydantic
+        - datasets >=3.0
+    
+    test:
+      requires:
+        - pytest
+        - muscat ==2.4.1
+      imports:
+        - plaid
+      source_files:
+        - tests
+        - examples
+      commands:
+        - python -m pytest tests
+        - cd examples
+        - bash run_examples.sh  # [unix]
+        - run_examples.bat      # [win]
 
-  run:
-    - python
-    - tqdm
-    - pyyaml
-    - pycgns-core
-    - numpy
-    - matplotlib-base
-    - scikit-learn
-    - pydantic
-    - datasets >=3.0
-
-test:
-  requires:
-    - pytest
-    - muscat ==2.4.1
-  imports:
-    - plaid
-  source_files:
-    - tests
-    - examples
-  commands:
-    - python -m pytest tests
-    - cd examples
-    - bash run_examples.sh  # [unix]
-    - run_examples.bat      # [win]
-
+  - name: plaid-devenv
+    version: {{ version }}
+    build:
+      skip: true  # [py<311 or py>312]
+      noarch: generic
+    
+    requirements:
+      run:
+      - python
+##### RUN #####
+#---# base
+      - tqdm
+#---# io
+      - pyyaml
+#---# mesh/graph libs
+      - pycgns-core
+#---# SciML
+      - scikit-learn
+      - datasets >=3.0
+      - numpy
+      - matplotlib-base
+#---# data validation
+      - pydantic
+##### DEV/TESTS/EXAMPLES #####
+#---# mesh/graph libs
+      - muscat=2.4.1
+#---# testing
+      - pytest
+      - pytest-cov
+#---# code formatters
+      - ruff
+#---# dev
+      - pre-commit
+#---# doc
+      - sphinx
+      - sphinx-autoapi
+      - sphinx-tabs
+      - sphinxcontrib-bibtex
+      - myst-nb
+      - myst-parser
+      - furo    
+    
 about:
   home: https://github.com/PLAID-lib/plaid
   summary: 'Physics Learning AI Datamodel (PLAID)'

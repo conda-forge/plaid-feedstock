@@ -10,6 +10,7 @@ source:
 
 build:
   number: 1
+  skip: true  # [py<311 or py>312]
 
 outputs:
   - name: plaid
@@ -18,7 +19,6 @@ outputs:
       script_env:
         - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
       script: {{ PYTHON }} -m pip install . -vv
-      skip: true  # [py<311 or py>312]
       
     requirements:
       host:
@@ -55,9 +55,6 @@ outputs:
 
   - name: plaid-devenv
     version: {{ version }}
-    build:
-      skip: true  # [py<311 or py>312]
-      noarch: generic
     
     requirements:
       run:

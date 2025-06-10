@@ -1,4 +1,3 @@
-test_on_native_only: true
 outputs:
   - name: plaid
   - name: plaid-devenv

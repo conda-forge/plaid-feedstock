@@ -21,45 +21,6 @@ Current build status
 
 
 <table>
-    
-  <tr>
-    <td>Azure</td>
-    <td>
-      <details>
-        <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main">
-          </a>
-        </summary>
-        <table>
-          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-    </td>
-  </tr>
 </table>
 
 Current release info
@@ -67,8 +28,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid-green.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid--devenv-green.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid--split-green.svg)](https://anaconda.org/conda-forge/plaid-split) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid-split.svg)](https://anaconda.org/conda-forge/plaid-split) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid-split.svg)](https://anaconda.org/conda-forge/plaid-split) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid-split.svg)](https://anaconda.org/conda-forge/plaid-split) |
 
 Installing plaid-split
 ======================
@@ -80,41 +40,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `plaid, plaid-devenv` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `plaid-split` can be installed with `conda`:
 
 ```
-conda install plaid plaid-devenv
-```
-
-or with `mamba`:
-
-```
-mamba install plaid plaid-devenv
-```
-
-It is possible to list all of the versions of `plaid` available on your platform with `conda`:
-
-```
-conda search plaid --channel conda-forge
+conda install plaid-split
 ```
 
 or with `mamba`:
 
 ```
-mamba search plaid --channel conda-forge
+mamba install plaid-split
+```
+
+It is possible to list all of the versions of `plaid-split` available on your platform with `conda`:
+
+```
+conda search plaid-split --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search plaid-split --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search plaid --channel conda-forge
+mamba repoquery search plaid-split --channel conda-forge
 
-# List packages depending on `plaid`:
-mamba repoquery whoneeds plaid --channel conda-forge
+# List packages depending on `plaid-split`:
+mamba repoquery whoneeds plaid-split --channel conda-forge
 
-# List dependencies of `plaid`:
-mamba repoquery depends plaid --channel conda-forge
+# List dependencies of `plaid-split`:
+mamba repoquery depends plaid-split --channel conda-forge
 ```
 
 

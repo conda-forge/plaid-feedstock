@@ -13,7 +13,7 @@ Development: https://github.com/PLAID-lib/plaid
 
 Documentation: https://plaid-lib.readthedocs.io
 
-A package that implements a data model tailored for AI and ML in the context of physics problems
+PLAID implements a data model tailored for AI and ML in the context of physics-based numerical simulations and modeling.
 
 
 Current build status

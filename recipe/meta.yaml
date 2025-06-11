@@ -6,20 +6,20 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: e88cef050fdf417592a647ab1a8c040c87fdcce8fa795bdd7e5610b5a2c21c79  
+  sha256: e7f03a9d1b18bae2b706411675d3a678c9ac4147250d89606ff19e2d5d03077f  
 
 build:
-  script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
   skip: true  # [py<311 or py>312]
-  number: 0
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
+  script: python -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
     - python
-    - setuptools
-    - setuptools-scm
+    - setuptools >=60
+    - setuptools-scm >=8.0      
     - pip
 
   run:
@@ -35,6 +35,7 @@ requirements:
 
 test:
   requires:
+    - bash  # [unix]
     - pytest
     - muscat ==2.4.1
   imports:
@@ -47,15 +48,14 @@ test:
     - cd examples
     - bash run_examples.sh  # [unix]
     - run_examples.bat      # [win]
-
+    
 about:
   home: https://github.com/PLAID-lib/plaid
-  summary: 'Physics Learning AI Datamodel (PLAID)'
+  summary: Physics Learning AI Datamodel (PLAID)
   description: |
-    A package that implements a data model tailored for AI and ML in the context of physics problems
-
-  license: BSD-3-Clause
+    PLAID implements a data model tailored for AI and ML in the context of physics-based numerical simulations and modeling.
   license_family: BSD
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   doc_url: https://plaid-lib.readthedocs.io
   dev_url: https://github.com/PLAID-lib/plaid

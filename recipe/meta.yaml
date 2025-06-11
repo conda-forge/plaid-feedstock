@@ -2,7 +2,7 @@
 {% set python_min = "3.11" %}
 
 package:
-  name: plaid-split
+  name: plaid
   version: {{ version }}
 
 source:
@@ -10,84 +10,46 @@ source:
   sha256: e7f03a9d1b18bae2b706411675d3a678c9ac4147250d89606ff19e2d5d03077f  
 
 build:
+  skip: true  # [py>312]
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
+  script: python -m pip install . -vv  
   number: 1
 
-outputs:
-  - name: plaid
-    build:
-      skip: true  # [py<311 or py>312]
-      script_env:
-        - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
-      script: python -m pip install . -vv  
-      
-    requirements:
-      host:
-        - python {{ python_min }}
-        - setuptools >=60
-        - setuptools-scm >=8.0      
-        - pip
-    
-      run:
-        - python >={{ python_min }}
-        - tqdm
-        - pyyaml
-        - pycgns-core
-        - numpy
-        - matplotlib-base
-        - scikit-learn
-        - pydantic
-        - datasets >=3.0
-    
-    test:
-      requires:
-        - bash  # [unix]
-        - pytest
-        - muscat ==2.4.1
-      imports:
-        - plaid
-      source_files:
-        - tests
-        - examples
-      commands:
-        - python --version
-        # - python -m pytest tests
-        # - cd examples
-        # - bash run_examples.sh  # [unix]
-        # - run_examples.bat      # [win]
-        
-  - name: plaid-devenv
-    build:
-      skip: true  # [py<311 or py>312]
-      noarch: generic
-      
-    requirements:
-      run:
-        - python >={{ python_min }}
-        - tqdm
-        - pyyaml
-        - pycgns-core
-        - scikit-learn
-        - datasets >=3.0
-        - numpy
-        - matplotlib-base
-        - pydantic
-        - muscat ==2.4.1
-        - pytest
-        - pytest-cov
-        - ruff
-        - pre-commit
-        - sphinx
-        - sphinx-autoapi
-        - sphinx-tabs
-        - sphinxcontrib-bibtex
-        - myst-nb
-        - myst-parser
-        - furo
-  
-    test:
-      commands:
-        - python --version
-        
+requirements:
+  host:
+    - python {{ python_min }}
+    - setuptools >=60
+    - setuptools-scm >=8.0      
+    - pip
+
+  run:
+    - python >={{ python_min }}
+    - tqdm
+    - pyyaml
+    - pycgns-core
+    - numpy
+    - matplotlib-base
+    - scikit-learn
+    - pydantic
+    - datasets >=3.0
+
+test:
+  requires:
+    - bash  # [unix]
+    - pytest
+    - muscat ==2.4.1
+  imports:
+    - plaid
+  source_files:
+    - tests
+    - examples
+  commands:
+    - python --version
+    - python -m pytest tests
+    - cd examples
+    - bash run_examples.sh  # [unix]
+    - run_examples.bat      # [win]
     
 about:
   home: https://github.com/PLAID-lib/plaid

@@ -1,5 +1,4 @@
 {% set version = "0.1.5" %}
-{% set python_min = "3.11" %}
 
 package:
   name: plaid
@@ -11,14 +10,14 @@ source:
 
 build:
   number: 1
-  skip: true  # [py>312]
+  skip: true  # [py<311 or py>312]
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
   script: python -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
-    - python >={{ python_min }}
+    - python
     - setuptools >=60
     - setuptools-scm >=8.0      
     - pip
@@ -45,7 +44,6 @@ test:
     - tests
     - examples
   commands:
-    - python --version
     - python -m pytest tests
     - cd examples
     - bash run_examples.sh  # [unix]

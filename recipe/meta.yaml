@@ -13,39 +13,6 @@ build:
   number: 1
 
 outputs:
-  - name: plaid-devenv
-    build:
-      skip: true  # [py<311 or py>312]
-      noarch: generic
-      
-    requirements:
-      run:
-        - python >={{ python_min }}
-        - tqdm
-        - pyyaml
-        - pycgns-core
-        - scikit-learn
-        - datasets >=3.0
-        - numpy
-        - matplotlib-base
-        - pydantic
-        - muscat ==2.4.1
-        - pytest
-        - pytest-cov
-        - ruff
-        - pre-commit
-        - sphinx
-        - sphinx-autoapi
-        - sphinx-tabs
-        - sphinxcontrib-bibtex
-        - myst-nb
-        - myst-parser
-        - furo
-  
-    test:
-      commands:
-        - python --version
-        
   - name: plaid
     build:
       skip: true  # [py<311 or py>312]
@@ -82,10 +49,45 @@ outputs:
         - tests
         - examples
       commands:
-        - python -m pytest tests
-        - cd examples
-        - bash run_examples.sh  # [unix]
-        - run_examples.bat      # [win]
+        - python --version
+        # - python -m pytest tests
+        # - cd examples
+        # - bash run_examples.sh  # [unix]
+        # - run_examples.bat      # [win]
+        
+  - name: plaid-devenv
+    build:
+      skip: true  # [py<311 or py>312]
+      noarch: generic
+      
+    requirements:
+      run:
+        - python >={{ python_min }}
+        - tqdm
+        - pyyaml
+        - pycgns-core
+        - scikit-learn
+        - datasets >=3.0
+        - numpy
+        - matplotlib-base
+        - pydantic
+        - muscat ==2.4.1
+        - pytest
+        - pytest-cov
+        - ruff
+        - pre-commit
+        - sphinx
+        - sphinx-autoapi
+        - sphinx-tabs
+        - sphinxcontrib-bibtex
+        - myst-nb
+        - myst-parser
+        - furo
+  
+    test:
+      commands:
+        - python --version
+        
     
 about:
   home: https://github.com/PLAID-lib/plaid

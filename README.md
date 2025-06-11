@@ -13,7 +13,7 @@ Development: https://github.com/PLAID-lib/plaid
 
 Documentation: https://plaid-lib.readthedocs.io
 
-A package that implements a data model tailored for AI and ML in the context of physics problems
+PLAID implements a data model tailored for AI and ML in the context of physics-based numerical simulations and modeling.
 
 
 Current build status
@@ -34,24 +34,45 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>osx_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20534&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/plaid-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -68,7 +89,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-plaid-green.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid--devenv-green.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid-devenv.svg)](https://anaconda.org/conda-forge/plaid-devenv) |
 
 Installing plaid
 ================
@@ -80,16 +100,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `plaid, plaid-devenv` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `plaid` can be installed with `conda`:
 
 ```
-conda install plaid plaid-devenv
+conda install plaid
 ```
 
 or with `mamba`:
 
 ```
-mamba install plaid plaid-devenv
+mamba install plaid
 ```
 
 It is possible to list all of the versions of `plaid` available on your platform with `conda`:

@@ -18,7 +18,7 @@ build:
 
 requirements:
   host:
-    - python >= {{ python_min }}
+    - python >={{ python_min }}
     - setuptools >=60
     - setuptools-scm >=8.0      
     - pip
@@ -63,7 +63,6 @@ about:
   dev_url: https://github.com/PLAID-lib/plaid
 
 extra:
-  feedstock-name: plaid
   recipe-maintainers:
     - bstaber
     - casenave

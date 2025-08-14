@@ -1,4 +1,4 @@
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: plaid
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 11bf9f222f1f3e3b9731b9fae4e0e80a0eb4e0035a32e18e9fc0600c0ccaabad  
+  sha256: 14084e0cb37f8304eb8f96a76e8908e86971b888be66e76f02b52247d8629bd5  
 
 build:
   number: 0
-  skip: true  # [py<39 or py>312]
+  skip: true  # [py<39 or py>313]
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
   script: python -m pip install . --no-deps --ignore-installed -vv
@@ -37,12 +37,14 @@ test:
   requires:
     - bash  # [unix]
     - pytest
+    - optuna
     - muscat ==2.4.1
   imports:
     - plaid
   source_files:
     - tests
     - examples
+    - docs
   commands:
     - python -m pytest tests
     - cd examples

@@ -39,6 +39,7 @@ test:
     - pytest
     - optuna
     - muscat ==2.5
+    - ipython
   imports:
     - plaid
   source_files:

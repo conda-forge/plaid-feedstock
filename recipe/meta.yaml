@@ -38,7 +38,7 @@ test:
     - bash  # [unix]
     - pytest
     - optuna
-    - muscat ==2.4.1
+    - muscat ==2.5
   imports:
     - plaid
   source_files:

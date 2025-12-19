@@ -39,7 +39,7 @@ test:
     - bash  # [unix]
     - pytest
     - optuna
-    - muscat ==2.5
+    - muscat ==2.5.1
     - ipython
   imports:
     - plaid

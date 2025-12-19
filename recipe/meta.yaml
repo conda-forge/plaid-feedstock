@@ -1,4 +1,4 @@
-{% set version = "0.1.10" %}
+{% set version = "0.1.11" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4badb83285368f6e624251d56e1d7751bffa9d7a1815c74325b350c17eea0f7b  
+  sha256: d6b89bc26ba0d5c1e84f5465538955440a480b4c5b8369155946a6c2e5592fe1  
 
 build:
   number: 0
@@ -32,6 +32,7 @@ requirements:
     - scikit-learn
     - pydantic
     - datasets >=3.0
+    - zarr
 
 test:
   requires:

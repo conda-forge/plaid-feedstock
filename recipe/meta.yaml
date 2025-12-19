@@ -1,4 +1,4 @@
-{% set version = "0.1.10" %}
+{% set version = "0.1.11" %}
 
 package:
   name: plaid
@@ -6,20 +6,20 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4badb83285368f6e624251d56e1d7751bffa9d7a1815c74325b350c17eea0f7b  
+  sha256: d6b89bc26ba0d5c1e84f5465538955440a480b4c5b8369155946a6c2e5592fe1
 
 build:
   number: 0
   skip: true  # [py<310 or py>313]
   script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: python -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
     - python
     - setuptools >=60
-    - setuptools-scm >=8.0      
+    - setuptools-scm >=8.0
     - pip
 
   run:
@@ -51,7 +51,6 @@ test:
     - cd examples
     - bash run_examples.sh  # [unix]
     - run_examples.bat      # [win]
-    
 about:
   home: https://github.com/PLAID-lib/plaid
   summary: Physics Learning AI Datamodel (PLAID)

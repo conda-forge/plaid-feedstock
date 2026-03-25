@@ -1,4 +1,4 @@
-{% set version = "0.1.14" %}
+{% set version = "0.1.15" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 117fd5856399f10ce72bed23be48ab2783629c9d21eaf621b0d7d867f58f7ee7    
+  sha256: 8c6e5369a8cf57bfd4b2a8b775fbb0cca28c82e1c180a7121309f25784243fce    
 
 build:
   number: 0

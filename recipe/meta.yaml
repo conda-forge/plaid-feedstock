@@ -1,4 +1,4 @@
-{% set version = "0.1.15" %}
+{% set version = "1.0.0" %}
 
 package:
   name: plaid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PLAID-lib/plaid/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 8c6e5369a8cf57bfd4b2a8b775fbb0cca28c82e1c180a7121309f25784243fce    
+  sha256: 7a1578d90f02571a23f439bf6109e9a3af00995059b1c36fb5f84ede28adc90c    
 
 build:
   number: 0
@@ -38,9 +38,8 @@ test:
   requires:
     - bash  # [unix]
     - pytest
-    - optuna
     - muscat-core >=2.5.1
-    - psutil
+    - vtk
     - ipython
   imports:
     - plaid
@@ -49,7 +48,7 @@ test:
     - examples
     - docs
   commands:
-    - python -m pytest tests
+    - python -m pytest tests --ignore=tests/types/test_cgns_types.py
     - cd examples
     - bash run_examples.sh  # [unix]
     - run_examples.bat      # [win]

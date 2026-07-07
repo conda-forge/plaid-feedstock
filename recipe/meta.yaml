@@ -39,6 +39,7 @@ test:
     - bash  # [unix]
     - pytest
     - muscat-core >=2.5.1
+    - vtk
   imports:
     - plaid
   source_files:

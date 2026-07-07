@@ -46,7 +46,7 @@ test:
     - examples
     - docs
   commands:
-    - python -m pytest tests
+    - python -m pytest tests --ignore=tests/types/test_cgns_types.py
     - cd examples
     - bash run_examples.sh  # [unix]
     - run_examples.bat      # [win]

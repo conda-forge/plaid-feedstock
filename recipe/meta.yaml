@@ -40,6 +40,7 @@ test:
     - pytest
     - muscat-core >=2.5.1
     - vtk
+    - ipython
   imports:
     - plaid
   source_files:

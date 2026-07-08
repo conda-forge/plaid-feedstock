@@ -110,6 +110,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-plaid-green.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid.svg)](https://anaconda.org/conda-forge/plaid) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-plaid--viewer-green.svg)](https://anaconda.org/conda-forge/plaid-viewer) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/plaid-viewer.svg)](https://anaconda.org/conda-forge/plaid-viewer) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/plaid-viewer.svg)](https://anaconda.org/conda-forge/plaid-viewer) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/plaid-viewer.svg)](https://anaconda.org/conda-forge/plaid-viewer) |
 
 Installing plaid
 ================
@@ -121,16 +122,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `plaid` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `plaid, plaid-viewer` can be installed with `conda`:
 
 ```
-conda install plaid
+conda install plaid plaid-viewer
 ```
 
 or with `mamba`:
 
 ```
-mamba install plaid
+mamba install plaid plaid-viewer
 ```
 
 It is possible to list all of the versions of `plaid` available on your platform with `conda`:

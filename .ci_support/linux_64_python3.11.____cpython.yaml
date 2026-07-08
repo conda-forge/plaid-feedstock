@@ -12,3 +12,5 @@ python:
 - 3.11.* *_cpython
 target_platform:
 - linux-64
+vtk:
+- 9.6.2

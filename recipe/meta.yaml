@@ -1,4 +1,5 @@
 {% set version = "1.0.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: plaid
@@ -54,21 +55,20 @@ outputs:
 
   - name: plaid-viewer
     build:
-      script: python -m pip install . --no-deps --ignore-installed -vv
+      noarch: python
     requirements:
       host:
-        - python
-        - setuptools >=60
-        - setuptools-scm >=8.0
-        - pip
+        - python {{ python_min }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('plaid', exact=True) }}
         - trame >=3.6,<4.0
         - trame-vtk >=2.8,<3.0
         - trame-vuetify >=2.7,<4.0
         - vtk >=9.6.1
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - plaid.viewer
 

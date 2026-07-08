@@ -1,7 +1,7 @@
 {% set version = "1.0.0" %}
 
 package:
-  name: plaid-split
+  name: plaid
   version: {{ version }}
 
 source:
@@ -54,11 +54,15 @@ outputs:
 
   - name: plaid-viewer
     build:
-      noarch: python
+      script: python -m pip install . --no-deps --ignore-installed -vv
     requirements:
       host:
         - python
+        - setuptools >=60
+        - setuptools-scm >=8.0
+        - pip
       run:
+        - python
         - {{ pin_subpackage('plaid', exact=True) }}
         - trame >=3.6,<4.0
         - trame-vtk >=2.8,<3.0

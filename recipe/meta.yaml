@@ -54,20 +54,23 @@ outputs:
 
   - name: plaid-viewer
     build:
-      noarch: python
+      script_env:
+        - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+      script: python -m pip install . --no-deps --ignore-installed -vv
     requirements:
       host:
-        - python {{ python_min }}
+        - python
+        - setuptools >=60
+        - setuptools-scm >=8.0
+        - pip
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('plaid', exact=True) }}
         - trame >=3.6,<4.0
         - trame-vtk >=2.8,<3.0
         - trame-vuetify >=2.7,<4.0
         - vtk >=9.6.1
     test:
-      requires:
-        - python {{ python_min }}
       imports:
         - plaid.viewer
 
